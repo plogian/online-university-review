@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { CenterfoldComponent } from './centerfold/centerfold.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     HeaderComponent,
     CenterfoldComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ReviewFormComponent
   ],
   imports: [
     BrowserModule
