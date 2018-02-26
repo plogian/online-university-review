@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+      <a routerLink="/" class="navbar-brand">
+        <img src="./assets/cap.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Uni Scoop
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a routerLink= "/reviews/new" routerLinkActive ="active" class="nav-link">Write a Review</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <ng-template [ngIf]= "!authService.loggedIn">
+              <li class="nav-item">
+                <a routerLink= "/signup" routerLinkActive ="active" class="nav-link">Register </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink= "/signin" routerLinkActive ="active" class="nav-link">Sign In</a>
+              </li>
+          </ng-template>
+           <ng-template [ngIf]= "authService.loggedIn">
+              <li class="nav-item">
+                <a (click)="onSignout()" class="nav-link">Sign Out</a>
+              </li>
+            </ng-template>
+        </ul>
+      </div>
+  </div>
+</nav>
