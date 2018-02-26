@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const universities = require('./controllers/universities');
+const config = require('./config/database');
 
 //Connect mongoose to our database
 mongoose.connect(config.database);
@@ -27,11 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Base url - eventually maybe API guide
 app.get('/', (req, res) => {
-	res.send('Online Universities API');
+	res.send('Online Universities API. See /universities');
 })
 
 app.use('/universities', universities)
 
-app.list(port, () => {
+app.listen(port, () => {
 	console.log(`Starting server on port ${port}`);
 })

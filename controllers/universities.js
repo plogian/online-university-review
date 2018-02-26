@@ -1,7 +1,7 @@
 //Declare dependencies
 const express = require('express');
 const router = express.Router();
-const university = require('../models/univerisity')
+const university = require('../models/university')
 
 //GET HTTP Method to get all universities
 router.get('/', (req, res) => {
